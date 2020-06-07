@@ -7,11 +7,22 @@
 
 <script>
 import TheHeader from '@/components/layout/TheHeader';
+import ExceriseList from '@/components/ExceriseList';
+import Search from '@/components/Search';
 
 export default {
   components: {
     TheHeader,
+    ExcerciseList,
+    Search,
   },
+  methods: {
+    handleFilter(filterText)  { 
+      this.filter =  filterText;
+    }
+  } 
+}
+</script>
 };
 </script>
 

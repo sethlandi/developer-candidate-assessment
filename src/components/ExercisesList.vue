@@ -8,7 +8,6 @@
     >
       {{ exercise.name }} 
     </div>
-    
   </div>
 </template>
 
