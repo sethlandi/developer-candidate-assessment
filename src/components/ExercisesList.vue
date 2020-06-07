@@ -6,8 +6,9 @@
       v-for="(exercise, i) in exercises"
       :key="exercise.id"
     >
-      {{ exercise.name }}
+      {{ exercise.name }} 
     </div>
+    
   </div>
 </template>
 
@@ -18,11 +19,58 @@ export default {
   data() {
     return {
       exercises: [],
+      studentScores: [],
     };
   },
   async created() {
     const exerciseService = new ExerciseService();
     this.exercises = await exerciseService.getAll();
+  },
+  computed: {
+    averageOfAllSections() {
+      if (this.studentScores.length === 0) {
+        return 0;
+      }
+      let sum = this.studentScores.reduce((currentSum, studentScore) => {
+        return currentSum + studentScore.score;
+      }, 0);
+      return (sum / this.studentScore.length).toFixed(2);
+    },
+    averageOfAllSection1(){
+      return this.averageOfSection(this.studentScores, 1);
+    },
+    averageOfAllSection2(){
+      return this.averageOfSection(this.studentScores, 2);
+    },
+    averageOfAllSection3(){
+      return this.averageOfSection(this.studentScores, 3);
+    },
+    averageOfAllSection4(){
+      return this.averageOfSection(this.studentScores, 4);
+    },
+    averageOfAllSection5(){
+      return this.averageOfSection(this.studentScores, 5);
+    },
+    averageOfAllSection6(){
+      return this.averageOfSection(this.studentScores, 6);
+    },
+    averageOfAllSection7(){
+      return this.averageOfSection(this.studentScores, 7);
+    },  
+    averageOfAllSection8(){
+      return this.averageOfSection(this.studentScores, 8);
+    }
+  },
+  methods: {
+    averageOfSection(studentScores, sectionId) {
+      if (this.studentScores.length === 1) {
+        return 0;
+      }
+      let count = this.studentScores.reduce((currentCount, studentScore) => {
+        return currentCount + (studentScore.exerciseId === sectionId ? studentScore.score : 0);
+      }, 0);
+      return (count / this.studentScore.length).toFixed(2);
+    },
   },
 };
 </script>
