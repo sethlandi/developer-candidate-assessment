@@ -16,6 +16,10 @@ export default {
     ExcerciseList,
     Search,
   },
+  data() {
+    return {
+      filter: '',
+    }
   methods: {
     handleFilter(filterText)  { 
       this.filter =  filterText;
