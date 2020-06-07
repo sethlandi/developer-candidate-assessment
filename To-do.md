@@ -1,0 +1,14 @@
+-Comments
+- De-bug exerciseList
+    - figure out if it is due to a different webpack, verison, or what is going on
+    - review methods and components to see why functions are returning zero
+- Clickable links from exerciseList view to indivdualExercise view
+- Routing views
+- Add profiles and images to individualExerciseView
+- De-bug search bar 
+    - Not receiving data
+- Research where to put average and if it needs its own component
+- Routing between views
+- updating score without buttons; fill and replace
+- Create profile view to look at all of one person's exercises 
+- Css if needed

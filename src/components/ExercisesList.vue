@@ -27,12 +27,9 @@ export default {
   },
   computed: {
     averageOfAllSections() {
-      if (this.studentScores.length === 0) {
-        return 0;
-      }
       let sum = this.studentScores.reduce((currentSum, studentScore) => {
         return currentSum + studentScore.score;
-      }, 0);
+      }, 0); // initialize currentSum to 0
       return (sum / this.studentScore.length).toFixed(2);
     },
     averageOfAllSection1(){
@@ -62,12 +59,9 @@ export default {
   },
   methods: {
     averageOfSection(studentScores, sectionId) {
-      if (this.studentScores.length === 1) {
-        return 0;
-      }
       let count = this.studentScores.reduce((currentCount, studentScore) => {
         return currentCount + (studentScore.exerciseId === sectionId ? studentScore.score : 0);
-      }, 0);
+      }, 0);// intialize currentCount to 0
       return (count / this.studentScore.length).toFixed(2);
     },
   },

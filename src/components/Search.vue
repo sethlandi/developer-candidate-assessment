@@ -1,6 +1,6 @@
 <template>
     <div class="search" >
-        <form v-on:submit.prevent="handleFilter">
+        <form v-on:submit.prevent="handleFilter"> // auto filtering search bar
             <label>Search :</label><input type="text" id="search" name="search" placeholder="Search..." v-model="searchText"/>
         </form>
     </div>
